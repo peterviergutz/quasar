@@ -214,6 +214,14 @@ export default {
           width: '500px'
         },
         {
+          label: 'Event Number',
+          field: 'event_number',
+          sort: true,
+          type: 'string',
+          width: '100px',
+          visible: false
+        },
+        {
           label: 'Source',
           field: 'source',
           filter: true,

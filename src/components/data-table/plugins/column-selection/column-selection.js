@@ -1,13 +1,20 @@
 export default {
   data () {
     return {
-      columnSelection: this.columns.map(col => col.field)
+      columnSelection: this.columns.map(col => {
+        return col.visible === false ? col.visible : col.field
+      })
     }
   },
   watch: {
     'config.columnPicker' (value) {
       if (!value) {
         this.columnSelection = this.columns.map(col => col.field)
+      }
+      else {
+        this.columnSelection = this.columns.map(col => {
+          return col.visible === false ? col.visible : col.field
+        })
       }
     }
   },
